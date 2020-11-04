@@ -26,9 +26,9 @@ function Chat() {
     className='chat-list'
     dataSource={[
         {
-            avatar: 'C:\Users\danal\Documents\client_mqtt_message\assets\witch.jpg',
-            alt: '',
-            title: 'saein',
+            avatar: 'https://facebook.github.io/react/img/logo.svg',
+            alt: 'Reactjs',
+            title: 'Facebook',
             subtitle: 'What are you doing?',
             date: new Date(),
             unread: 0,
