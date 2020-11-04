@@ -1,42 +1,45 @@
 import React, { useEffect, useReducer } from 'react';
-import {addResponseMessage, Widget} from 'react-chat-widget';
-import { connect } from 'react-redux';
-import axios from 'axios';
-
-import 'react-chat-widget/lib/styles.css'
+import 'react-chat-elements/dist/main.css';
+// MessageBox component
+import { MessageList, ChatList } from 'react-chat-elements'
 
 function Chat() {
 
-    const [] = useReducer(reducer, {
-        data: null,
-        error: null
-    })
+    // const [state, dispatch] = useReducer(reducer, {
+    //     data: null,
+    //     error: null
+    // })
 
+    //render, rerender 후(화면이 다 그려진 후에 발생)
     useEffect(() => {
-        addResponseMessage("welcome to thiw awesome chat!")
-    },[])
+        // const subscription = props.source.subscribe();
+        console.log("useEffect")
+        // return () => {
+        //     subscription.unsubscribe();
+        // }
+    },[]);
 
-    const handleNewUserMessage = async (newMessage) => {
-        console.log(`New message incoming! ${newMessage}`)
-        try {
-            
-        } catch (error) {
-            
-        }
-    }
-
-    const {} = state
-
-    if (error) return <div>에러가 발생했습니다 {error}</div>;
+    
     return (
-        <div className="App">
-            <Widget 
-            title="title"
-            subtitle="subtitle"
-            handleNewUserMessage={handleNewUserMessage}
-            />
-        </div>
+
+<ChatList
+    className='chat-list'
+    dataSource={[
+        {
+            avatar: 'C:\Users\danal\Documents\client_mqtt_message\assets\witch.jpg',
+            alt: '',
+            title: 'saein',
+            subtitle: 'What are you doing?',
+            date: new Date(),
+            unread: 0,
+        }
+    ]} />
+        
     )
 }
 
-export default connect(Chat);
+// function mapStateToProps(state) {
+//     return {}
+// }
+
+export default Chat;

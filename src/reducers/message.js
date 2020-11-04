@@ -1,14 +1,14 @@
 import { SEND_MESSAGE } from '../actions/actionType'
 
 const initialState = {
-    message:[]
+    messageList:[]
 }
 
 export default function(state = initialState, action){
     switch (action.type) {
         case SEND_MESSAGE:{
             return {
-            ...state
+            ...state, messageList: state.messageList
         };    
     }
         default:
